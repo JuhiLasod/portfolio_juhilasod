@@ -31,12 +31,12 @@ export default function Contact() {
             >
               {contactInfo.number && (
                 <>
-                  <a
+                  {/* <a
                     className="contact-detail"
                     href={"tel:" + contactInfo.number}
                   >
                     {contactInfo.number}
-                  </a>
+                  </a> */}
                   <br />
                   <br />
                 </>

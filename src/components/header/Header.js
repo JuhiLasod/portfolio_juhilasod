@@ -10,19 +10,20 @@ import {
   openSource,
   blogSection,
   talkSection,
-  achievementSection,
-  resumeSection
+  bigProjects,
+  techStack,
+  educationInfo
 } from "../../portfolio";
 
 function Header() {
   const {isDark} = useContext(StyleContext);
-  const viewExperience = workExperiences.display;
+  const viewExperience = bigProjects.display;
   const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
-  const viewAchievement = achievementSection.display;
+  const viewAchievement = educationInfo.display;
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
-  const viewResume = resumeSection.display;
+  const viewResume = techStack.display;
 
   return (
     <Headroom>

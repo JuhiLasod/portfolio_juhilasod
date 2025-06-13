@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ec9f3729.css",
+    "main.js": "/static/js/main.faf6bd0c.js",
+    "static/css/64.3361bbf2.chunk.css": "/static/css/64.3361bbf2.chunk.css",
+    "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
+    "static/css/769.50fb794e.chunk.css": "/static/css/769.50fb794e.chunk.css",
+    "static/js/769.1247097a.chunk.js": "/static/js/769.1247097a.chunk.js",
+    "static/media/woman in red.png": "/static/media/woman in red.6a30c117e2d7ceccbd08.png",
+    "static/media/rakshak.png": "/static/media/rakshak.0a4e4152d9e497675b8c.png",
+    "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/vku.png": "/static/media/vku.3beb4ae87fa7c0c8fdc0.png",
+    "static/media/initial.gif": "/static/media/initial.42adf7c732b2c6fb9cea.gif",
+    "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
+    "static/media/npm.png": "/static/media/npm.566d5c6b434af2890e40.png",
+    "static/media/login.png": "/static/media/login.f6aa314cc66e948894d5.png",
+    "static/media/contactMailDark.svg": "/static/media/contactMailDark.1db650d351729a0f17b4e3104e6a7b7a.svg",
+    "static/media/quoraLogo.png": "/static/media/quoraLogo.85eb29f4d52320c8ed99.png",
+    "static/media/page2.gif": "/static/media/page2.902b38e83542c3c57abd.gif",
+    "static/media/googleAssistantLogo.webp": "/static/media/googleAssistantLogo.f720c71652579588524a.webp",
+    "static/media/airbnbLogo.png": "/static/media/airbnbLogo.e8497507db673acd3991.png",
+    "static/media/bv.jfif": "/static/media/bv.7c136980b229b4e182ca.jfif",
+    "static/media/facebookLogo.png": "/static/media/facebookLogo.f46d68b24e9b4f73ee8b.png",
+    "static/media/codeInLogo.webp": "/static/media/codeInLogo.e41a71d512efeda2a55c.webp",
+    "static/media/skill.svg": "/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
+    "static/media/resume.pdf": "/static/media/resume.f0f733dd3cd732b39262.pdf",
+    "static/media/pwaLogo.webp": "/static/media/pwaLogo.8bf2293da0ca66249e37.webp",
+    "index.html": "/index.html",
+    "main.ec9f3729.css.map": "/static/css/main.ec9f3729.css.map",
+    "main.faf6bd0c.js.map": "/static/js/main.faf6bd0c.js.map",
+    "64.3361bbf2.chunk.css.map": "/static/css/64.3361bbf2.chunk.css.map",
+    "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
+    "769.50fb794e.chunk.css.map": "/static/css/769.50fb794e.chunk.css.map",
+    "769.1247097a.chunk.js.map": "/static/js/769.1247097a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec9f3729.css",
+    "static/js/main.faf6bd0c.js"
+  ]
+}

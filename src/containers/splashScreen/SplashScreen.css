@@ -1,0 +1,67 @@
+/* Container for the whole splash screen */
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: white; /* Adjust for dark mode if needed */
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+/* When splash is hiding (optional fade out) */
+.splash-container.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Container for the GIF animation */
+.splash-animation-container {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GIF image styling */
+.splash-gif {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Container for the title under the GIF */
+.splash-title-container {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom font title (your name, etc.) */
+.splash-title {
+  /* font-family: "Agustina Regular", cursive; */
+  font-weight: bold;
+  font-style: italic;
+  font-variant-ligatures: no-common-ligatures;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  padding: 0 20px;
+}
+
+/* Optional color for angled brackets */
+.grey-color {
+  color: grey;
+}
+
+/* Dark mode styles */
+.dark-mode.splash-container {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.dark-mode .grey-color {
+  color: lightgrey;
+}

@@ -1,34 +1,38 @@
+const fs = require("fs");
+const https = require("https");
+const process = require("process");
+
+// ✅ Safely load dotenv if present
 try {
-  require(require('path').resolve(process.cwd(), 'node_modules/dotenv')).config();
+  require(require("path").resolve(process.cwd(), "node_modules/dotenv")).config();
 } catch (e) {
   console.warn("dotenv not found or failed to load. Skipping...");
 }
 
-fs = require("fs");
-const https = require("https");
-process = require("process");
-require("dotenv").config();
-
+// ✅ Environment variables
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const USE_GITHUB_DATA = process.env.USE_GITHUB_DATA;
 const MEDIUM_USERNAME = process.env.MEDIUM_USERNAME;
 
+// ✅ Error messages
 const ERR = {
   noUserName:
     "Github Username was found to be undefined. Please set all relevant environment variables.",
   requestFailed:
     "The request to GitHub didn't succeed. Check if GitHub token in your .env file is correct.",
   requestFailedMedium:
-    "The request to Medium didn't succeed. Check if Medium username in your .env file is correct."
+    "The request to Medium didn't succeed. Check if Medium username in your .env file is correct.",
 };
+
 if (USE_GITHUB_DATA === "true") {
-  if (GITHUB_USERNAME === undefined) {
+  if (!GITHUB_USERNAME) {
     throw new Error(ERR.noUserName);
   }
 
   console.log(`Fetching profile data for ${GITHUB_USERNAME}`);
-  var data = JSON.stringify({
+
+  const data = JSON.stringify({
     query: `
 {
   user(login:"${GITHUB_USERNAME}") { 
@@ -60,39 +64,41 @@ if (USE_GITHUB_DATA === "true") {
       }
     }
 }
-`
+`,
   });
-  const default_options = {
+
+  const options = {
     hostname: "api.github.com",
     path: "/graphql",
     port: 443,
     method: "POST",
     headers: {
       Authorization: `Bearer ${GITHUB_TOKEN}`,
-      "User-Agent": "Node"
-    }
+      "User-Agent": "Node",
+    },
   };
 
-  const req = https.request(default_options, res => {
-    let data = "";
+  const req = https.request(options, (res) => {
+    let response = "";
 
-    console.log(`statusCode: ${res.statusCode}`);
+    console.log(`GitHub API statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
       throw new Error(ERR.requestFailed);
     }
 
-    res.on("data", d => {
-      data += d;
+    res.on("data", (chunk) => {
+      response += chunk;
     });
+
     res.on("end", () => {
-      fs.writeFile("./public/profile.json", data, function (err) {
-        if (err) return console.log(err);
-        console.log("saved file to public/profile.json");
+      fs.writeFile("./public/profile.json", response, (err) => {
+        if (err) return console.error(err);
+        console.log("Saved profile.json");
       });
     });
   });
 
-  req.on("error", error => {
+  req.on("error", (error) => {
     throw error;
   });
 
@@ -100,35 +106,37 @@ if (USE_GITHUB_DATA === "true") {
   req.end();
 }
 
-if (MEDIUM_USERNAME !== undefined) {
+// ✅ Medium data
+if (MEDIUM_USERNAME) {
   console.log(`Fetching Medium blogs data for ${MEDIUM_USERNAME}`);
   const options = {
     hostname: "api.rss2json.com",
     path: `/v1/api.json?rss_url=https://medium.com/feed/@${MEDIUM_USERNAME}`,
     port: 443,
-    method: "GET"
+    method: "GET",
   };
 
-  const req = https.request(options, res => {
+  const req = https.request(options, (res) => {
     let mediumData = "";
 
-    console.log(`statusCode: ${res.statusCode}`);
+    console.log(`Medium API statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
+      throw new Error(ERR.requestFailedMedium);
     }
 
-    res.on("data", d => {
-      mediumData += d;
+    res.on("data", (chunk) => {
+      mediumData += chunk;
     });
+
     res.on("end", () => {
-      fs.writeFile("./public/blogs.json", mediumData, function (err) {
-        if (err) return console.log(err);
-        console.log("saved file to public/blogs.json");
+      fs.writeFile("./public/blogs.json", mediumData, (err) => {
+        if (err) return console.error(err);
+        console.log("Saved blogs.json"); 
       });
     });
   });
 
-  req.on("error", error => {
+  req.on("error", (error) => {
     throw error;
   });
 

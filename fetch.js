@@ -1,3 +1,9 @@
+try {
+  require(require('path').resolve(process.cwd(), 'node_modules/dotenv')).config();
+} catch (e) {
+  console.warn("dotenv not found or failed to load. Skipping...");
+}
+
 fs = require("fs");
 const https = require("https");
 process = require("process");

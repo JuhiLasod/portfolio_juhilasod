@@ -1,5 +1,5 @@
 
-
+import { SiFlutter } from "react-icons/si";
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/images/initial.gif";
 
@@ -65,6 +65,14 @@ const skillsSection = {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
+    // {
+    //   skillName: "flutter",
+    //   fontAwesomeClassname: "fab fa-flutter"
+    // },
+    {
+      skillName: "Flutter",
+      icon: <SiFlutter />
+    },
     {
       skillName: "reactjs",
       fontAwesomeClassname: "fab fa-react"
@@ -98,8 +106,8 @@ const skillsSection = {
       fontAwesomeClassname: "devicon-cplusplus-plain"
     },
     {
-      skillName: "Vercel",
-      fontAwesomeClassname: "devicon-vercel-original"
+      skillName: "Python",
+      fontAwesomeClassname: "fab fa-python"
     },        
     {
       skillName: "VS Code",
@@ -119,6 +127,7 @@ const educationInfo = {
       logo: require("./assets/images/bv.jfif"),
       subHeader: "Master in Computer Application",
       duration: "July 2024 - May 2026",
+      desc: "Cgpa of 9.0 .",
       desc: "Participated in various hackathons organised by Banasthali Vidhyapith",
       descBullets: ["Shortlisted in top 30 teams in Hackcelestia in which over 250 teams participated PAN India."]
     },
@@ -176,9 +185,10 @@ const bigProjects = {
       projectName: "RAKSHAK",
       projectDesc: "RAKSHAK is an emergency SOS website that sends instant alerts with your live location at the click of a button. The platform features secure JWT authentication and email notifications for added safety. Additionally, it includes a donation system to support those in crisis, integrating live location tracking and secure payments for seamless emergency response and community aid. ",
       footerLink: [
-        // {
-        //   name: "Visit Website",
-        // },
+        {
+          name: "Visit Website",
+          url: "https://rakshak-j5xq.onrender.com/"
+        },
         {
           name: "Visit git",
           url: "https://github.com/JuhiLasod/RAKSHAK"
@@ -186,17 +196,32 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/login.png"),
-      projectName: "Sign in/Sign up",
-      projectDesc: "This is a fully functional web application featuring secure user authentication. It supports user registration, login, password reset via email with OTP verification, and persistent user data storage. The system ensures a seamless and secure experience for both new and returning users. All sensitive operations are backed with email notifications and encrypted data handling.",
+      image: require("./assets/images/quizoraport.jpeg"),
+      projectName: "Quizora",
+      projectDesc: "Quizora is a quiz application built with Flutter (frontend) and Python with Pymongo (backend).It allows users to create quizzes, attempt quizzes created by others, and view their scores in real-time.A community-driven quiz app where you can gather knowledge in multiple fields",
       footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://login-page-7.onrender.com/"
-        },
+        // {
+        //   name: "Visit Website",
+        //   url: "https://rakshak-j5xq.onrender.com/"
+        // },
         {
           name: "Visit git",
-          url: "https://github.com/JuhiLasod/Login-Page"
+          url: "https://github.com/JuhiLasod/Quizora"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/ssport.jpeg"),
+      projectName: "SamaySetu",
+      projectDesc: "SamaySetu is a community-driven Time Banking app where users can offer their time and services and earn time credits, which can be used to request services from others. Built with a Node.js + Express backend and Flutter frontend, SamaySetu promotes collaborative exchange without currency.",
+      footerLink: [
+        // {
+        //   name: "Visit Website",
+        //   url: "https://rakshak-j5xq.onrender.com/"
+        // },
+        {
+          name: "Visit git",
+          url: "https://github.com/JuhiLasod/SamaySetu"
         }
       ]
     },
